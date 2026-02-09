@@ -25,16 +25,13 @@
 
         <div class="video-container">
             <div class="video-wrapper">
-                <!-- REPLACE THE URL BELOW WITH YOUR VIDEO URL -->
-                <!-- For YouTube: Use the embed URL format: https://www.youtube.com/embed/VIDEO_ID -->
-                <!-- Example: https://www.youtube.com/embed/dQw4w9WgXcQ -->
-                <iframe 
-                    src="YOUR_VIDEO_URL_HERE" 
-                    title="Our Song" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+                <!-- Add your video file to the same folder as this HTML file -->
+                <!-- Replace "your-video.mp4" with your actual video filename -->
+                <video controls loop>
+                    <source src="images/song.mp4" type="video/mp4">
+                   
+                    Your browser does not support the video tag.
+                </video>
             </div>
             
             <div class="song-message">
@@ -58,7 +55,7 @@
 
     <script>
         function goBack() {
-            window.location.href = 'gifts.html';
+            window.location.href = 'cool.html';
         }
     </script>
 </body>
