@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #ffd1ff 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Floating hearts */
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.5;
+    animation: float-up 15s infinite ease-in-out;
+}
+
+.floating-heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-heart:nth-child(2) { left: 30%; animation-delay: 3s; }
+.floating-heart:nth-child(3) { left: 50%; animation-delay: 6s; }
+.floating-heart:nth-child(4) { left: 70%; animation-delay: 9s; }
+.floating-heart:nth-child(5) { left: 85%; animation-delay: 12s; }
+.floating-heart:nth-child(6) { left: 20%; animation-delay: 5s; }
+
+@keyframes float-up {
+    0% {
+        bottom: -10%;
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(30px) rotate(180deg);
+    }
+    100% {
+        bottom: 110%;
+        transform: translateX(0) rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+    border: 3px solid rgba(255, 182, 193, 0.6);
+}
+
+.header h1 {
+    font-size: 3em;
+    color: #e91e63;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.2);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 2px 2px 4px rgba(233, 30, 99, 0.2);
+    }
+    50% {
+        text-shadow: 2px 2px 20px rgba(233, 30, 99, 0.6);
+    }
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: #c2185b;
+    font-style: italic;
+}
+
+/* Bouquet Container */
+.bouquet-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(255, 105, 180, 0.4);
+    border: 3px solid rgba(255, 182, 193, 0.6);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Bouquet Styling */
+.bouquet {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+/* Individual Rose */
+.rose {
+    position: relative;
+    margin: 0 5px;
+    opacity: 0;
+    transform: translateY(50px) rotate(0deg);
+    transition: all 0.8s ease;
+}
+
+.rose.appear {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+    animation: sway 3s infinite ease-in-out;
+}
+
+.rose-petals {
+    font-size: 60px;
+    filter: drop-shadow(0 5px 10px rgba(220, 20, 60, 0.4));
+}
+
+.rose-stem {
+    width: 4px;
+    height: 200px;
+    background: linear-gradient(to bottom, #2d5016, #4a7c2c);
+    margin: 0 auto;
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.rose-leaf {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: #4a7c2c;
+    border-radius: 0 50% 50% 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.leaf-left {
+    left: -15px;
+    top: 100px;
+    transform: rotate(-45deg);
+}
+
+.leaf-right {
+    right: -15px;
+    top: 150px;
+    transform: rotate(45deg) scaleX(-1);
+}
+
+/* Different positions for each rose */
+.rose1 { z-index: 7; }
+.rose2 { z-index: 6; transform: translateY(50px) rotate(-10deg); }
+.rose3 { z-index: 5; transform: translateY(50px) rotate(5deg); }
+.rose4 { z-index: 8; transform: translateY(50px) rotate(-5deg); }
+.rose5 { z-index: 4; transform: translateY(50px) rotate(10deg); }
+.rose6 { z-index: 3; transform: translateY(50px) rotate(-8deg); }
+.rose7 { z-index: 6; transform: translateY(50px) rotate(3deg); }
+
+.rose1.appear { transform: translateY(0) rotate(0deg); }
+.rose2.appear { transform: translateY(20px) rotate(-10deg); }
+.rose3.appear { transform: translateY(10px) rotate(5deg); }
+.rose4.appear { transform: translateY(15px) rotate(-5deg); }
+.rose5.appear { transform: translateY(25px) rotate(10deg); }
+.rose6.appear { transform: translateY(30px) rotate(-8deg); }
+.rose7.appear { transform: translateY(18px) rotate(3deg); }
+
+/* Sway animation */
+@keyframes sway {
+    0%, 100% {
+        transform: translateY(0) rotate(var(--rotate, 0deg));
+    }
+    50% {
+        transform: translateY(-5px) rotate(calc(var(--rotate, 0deg) + 3deg));
+    }
+}
+
+.rose1 { --rotate: 0deg; animation-delay: 0s; }
+.rose2 { --rotate: -10deg; animation-delay: 0.2s; }
+.rose3 { --rotate: 5deg; animation-delay: 0.4s; }
+.rose4 { --rotate: -5deg; animation-delay: 0.6s; }
+.rose5 { --rotate: 10deg; animation-delay: 0.8s; }
+.rose6 { --rotate: -8deg; animation-delay: 1s; }
+.rose7 { --rotate: 3deg; animation-delay: 1.2s; }
+
+/* Ribbon */
+.ribbon {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.bow {
+    font-size: 50px;
+    filter: drop-shadow(0 5px 10px rgba(255, 105, 180, 0.4));
+    animation: bow-bounce 2s infinite;
+}
+
+@keyframes bow-bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Message Box */
+.message-box {
+    margin-top: 30px;
+}
+
+.love-message {
+    font-size: 1.3em;
+    color: #d32f2f;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    animation: fade-in 1s ease;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sparkles */
+.sparkles {
+    text-align: center;
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.sparkle {
+    font-size: 2em;
+    display: inline-block;
+    animation: sparkle-animation 1.5s infinite;
+}
+
+.sparkle:nth-child(1) { animation-delay: 0s; }
+.sparkle:nth-child(2) { animation-delay: 0.3s; }
+.sparkle:nth-child(3) { animation-delay: 0.6s; }
+.sparkle:nth-child(4) { animation-delay: 0.9s; }
+.sparkle:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes sparkle-animation {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Back Button */
+.back-button-container {
+    text-align: center;
+}
+
+.back-button {
+    background: rgba(255, 255, 255, 0.95);
+    color: #e91e63;
+    border: 2px solid #ff69b4;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    transition: all 0.3s ease;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.back-button:hover {
+    background: #ff69b4;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.2em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .bouquet-container {
+        padding: 30px 20px;
+    }
+    
+    .bouquet {
+        height: 300px;
+    }
+    
+    .rose-petals {
+        font-size: 40px;
+    }
+    
+    .rose-stem {
+        height: 150px;
+    }
+    
+    .bow {
+        font-size: 35px;
+    }
+    
+    .love-message {
+        font-size: 1em;
+    }
+}

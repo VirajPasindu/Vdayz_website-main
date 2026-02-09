@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter 💌</title>
+    <link rel="stylesheet" href="loveletter.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts">
+        <span class="floating-heart">💕</span>
+        <span class="floating-heart">💖</span>
+        <span class="floating-heart">💗</span>
+        <span class="floating-heart">💝</span>
+        <span class="floating-heart">❤️</span>
+    </div>
+
+    <div class="container">
+        <div class="envelope-wrapper">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="letter-container">
+                    <div class="letter">
+                        <div class="letter-header">
+                            <h1>💌 My Dearest Love 💌</h1>
+                            <p class="date">Valentine's Day 2026</p>
+                        </div>
+                        
+                        <div class="letter-body">
+                            <p class="salutation">My Darling [Her Name],</p>
+                            
+                            <p>From the moment you came into my life, everything changed. You brought color to my world, warmth to my heart, and meaning to every single day.</p>
+                            
+                            <p>I love the way you smile, the way you laugh, and the way you make even ordinary moments feel extraordinary. Your kindness, your strength, and your beautiful soul inspire me every single day.</p>
+                            
+                            <p>Being with you feels like home. You are my best friend, my partner in crime, my biggest cheerleader, and the love of my life. I am so incredibly grateful for every moment we share together.</p>
+                            
+                            <p>Thank you for being you. Thank you for choosing me. Thank you for all the love, laughter, and memories we've created together. I can't wait to make a million more with you.</p>
+                            
+                            <p>I love you more than words could ever express, today and always.</p>
+                            
+                            <p class="closing">Forever yours,</p>
+                            <p class="signature">❤️ [Your Name] ❤️</p>
+                        </div>
+                        
+                        <div class="letter-footer">
+                            <span class="heart-decoration">💕 💖 💗 💝 💕</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <button class="back-button" onclick="goBack()">← Back to Gifts</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'gifts.html';
+        }
+
+        // Envelope opening animation
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.envelope').classList.add('open');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

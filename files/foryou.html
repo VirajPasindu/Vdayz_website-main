@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 🌹</title>
+    <link rel="stylesheet" href="foryou.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts">
+        <span class="floating-heart">💕</span>
+        <span class="floating-heart">💖</span>
+        <span class="floating-heart">🌹</span>
+        <span class="floating-heart">💐</span>
+        <span class="floating-heart">❤️</span>
+        <span class="floating-heart">🌺</span>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🌹 A Bouquet for You 🌹</h1>
+            <p class="subtitle">These roses are as beautiful as you, my love 💕</p>
+        </div>
+
+        <div class="bouquet-container">
+            <!-- Animated Rose Bouquet -->
+            <div class="bouquet">
+                <div class="rose rose1">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose2">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose3">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose4">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose5">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose6">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                <div class="rose rose7">
+                    <div class="rose-petals">🌹</div>
+                    <div class="rose-stem"></div>
+                    <div class="rose-leaf leaf-left"></div>
+                    <div class="rose-leaf leaf-right"></div>
+                </div>
+                
+                <!-- Ribbon bow -->
+                <div class="ribbon">
+                    <div class="bow">🎀</div>
+                </div>
+            </div>
+
+            <div class="message-box">
+                <p class="love-message">🌹 Each rose represents a reason why I love you 🌹</p>
+                <p class="love-message">💕 You deserve all the flowers in the world 💕</p>
+                <p class="love-message">❤️ Happy Valentine's Day, my beautiful love ❤️</p>
+            </div>
+        </div>
+
+        <div class="sparkles">
+            <span class="sparkle">✨</span>
+            <span class="sparkle">✨</span>
+            <span class="sparkle">✨</span>
+            <span class="sparkle">✨</span>
+            <span class="sparkle">✨</span>
+        </div>
+
+        <div class="back-button-container">
+            <button class="back-button" onclick="goBack()">← Back to Gifts</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'cool.html';
+        }
+
+        // Add rose appearing animation on load
+        window.addEventListener('load', function() {
+            const roses = document.querySelectorAll('.rose');
+            roses.forEach((rose, index) => {
+                setTimeout(() => {
+                    rose.classList.add('appear');
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

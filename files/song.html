@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Song 🎵</title>
+    <link rel="stylesheet" href="song.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="floating-hearts">
+        <span class="floating-heart">💕</span>
+        <span class="floating-heart">💖</span>
+        <span class="floating-heart">🎵</span>
+        <span class="floating-heart">🎶</span>
+        <span class="floating-heart">❤️</span>
+        <span class="floating-heart">💗</span>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>🎵 Our Special Song 🎵</h1>
+            <p class="subtitle">This song reminds me of you, of us, and all our beautiful moments together 💕</p>
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <!-- REPLACE THE URL BELOW WITH YOUR VIDEO URL -->
+                <!-- For YouTube: Use the embed URL format: https://www.youtube.com/embed/VIDEO_ID -->
+                <!-- Example: https://www.youtube.com/embed/dQw4w9WgXcQ -->
+                <iframe 
+                    src="YOUR_VIDEO_URL_HERE" 
+                    title="Our Song" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="song-message">
+                <p>🎶 Every time I hear this song, I think of you. It captures everything I feel - the joy, the love, the happiness you bring to my life. 🎶</p>
+                <p>💕 This is our song, and every note reminds me why I love you so much. 💕</p>
+            </div>
+        </div>
+
+        <div class="music-notes">
+            <span class="note">🎵</span>
+            <span class="note">🎶</span>
+            <span class="note">🎵</span>
+            <span class="note">🎶</span>
+            <span class="note">🎵</span>
+        </div>
+
+        <div class="back-button-container">
+            <button class="back-button" onclick="goBack()">← Back to Gifts</button>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = 'gifts.html';
+        }
+    </script>
+</body>
+</html>
